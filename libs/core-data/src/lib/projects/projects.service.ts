@@ -9,9 +9,23 @@ const BASE_URL = 'http://localhost:3000/';
 export class ProjectsService {
   model = 'projects';
   constructor(private httpClient: HttpClient) {}
+  getUrl() {
+    return `${BASE_URL}${this.model}`;
+  }
+  getUrlForId(id: string) {
+    return `${this.getUrl()}/${id}`;
+  }
   all(): Observable<Project[]> {
-    return this.httpClient.get(`${BASE_URL}${this.model}`) as Observable<
-      Project[]
-    >;
+    return this.httpClient.get(this.getUrl()) as Observable<Project[]>;
+  }
+
+  create(project: Project) {
+    return this.httpClient.post(this.getUrl(), project);
+  }
+  update(project: Project) {
+    return this.httpClient.patch(this.getUrlForId(project.id), project);
+  }
+  delete(projectId: string) {
+    return this.httpClient.delete(this.getUrlForId(projectId));
   }
 }
