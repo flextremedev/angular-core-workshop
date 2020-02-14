@@ -9,6 +9,7 @@ import { HomeModule } from './home/home.module';
 import { ProjectsModule } from './projects/projects.module';
 import { CustomersModule } from './customers/customers.module';
 import { UiLoginModule } from '@workshop/ui-login';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,6 +17,7 @@ import { UiLoginModule } from '@workshop/ui-login';
     BrowserModule,
     NxModule.forRoot(),
     BrowserAnimationsModule,
+    HttpClientModule,
     AppRoutingModule,
     MaterialModule,
     HomeModule,
