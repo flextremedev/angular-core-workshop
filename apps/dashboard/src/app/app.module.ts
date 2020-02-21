@@ -10,6 +10,7 @@ import { ProjectsModule } from './projects/projects.module';
 import { CustomersModule } from './customers/customers.module';
 import { UiLoginModule } from '@workshop/ui-login';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     NxModule.forRoot(),
     BrowserAnimationsModule,
+    FormsModule,
     HttpClientModule,
     AppRoutingModule,
     MaterialModule,
